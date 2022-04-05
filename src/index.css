@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+
+html, body{
+    height: 100%;
+    border: 1px solid red;
+    border-radius: 1%;
+    padding: 1px;
+    background-color: black;
+    color: white;
+    font-family: 'Black Ops One';
+    align-items: center;
+}
+
+#main-title{
+    text-align: center;
+    height: 10%;
+    width: 100%;
+}
+
+/*Class to center item*/
+.centerDown{
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    bottom: 1%;
+    left: 40%;
+}
+
+button{
+    border: 1px solid white;
+    border-radius: 20px;
+    font-family: inherit;
+    background-color: white;
+    width: 20%;
+    height: 10%;
+    bottom: 0%;
+    font-size: 1.25vw;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(201, 201, 201);
+}
+
+button:active{
+    background-color: rgb(0, 0, 0);
+    color: rgb(129, 0, 0);
+}
+
+#cardContainer{
+    position: relative;
+    height: 70%;
+    width: 95;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4,200px);
+    grid-template-rows: repeat(4,200px);
+    grid-row-gap: 10px;
+
+}
+
+#game-info{
+    bottom: 250px;
+    font-size: 1.25vw;
+}
+
+.card{
+    background-color: gray;
+    height: 175px;
+    width: 125px;
+    border-radius: 2%;
+    text-align: center;
+}
