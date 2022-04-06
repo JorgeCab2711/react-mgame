@@ -1,3 +1,4 @@
+const loader = require("css-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
@@ -35,7 +36,11 @@ module.exports = {
       },
       {
         test: /\.png|svg|jpg|gif$/,
-        use: ["file-loader"],
+        use: [
+          {
+            loader:"file-loader"
+          }
+        ],
       }, 
     ],
   },

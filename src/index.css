@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
-
+ 
 html, body{
     height: 100%;
     border: 1px solid red;
@@ -15,7 +14,8 @@ html, body{
 #main-title{
     text-align: center;
     height: 10%;
-    width: 100%;
+    width: 95%;
+    text-decoration: underline solid red;
 }
 
 /*Class to center item*/
@@ -24,10 +24,11 @@ html, body{
     padding: 10px;
     position: absolute;
     bottom: 1%;
-    left: 40%;
+    left: 36%;
 }
 
 button{
+    position: absolute;
     border: 1px solid white;
     border-radius: 20px;
     font-family: inherit;
@@ -46,30 +47,165 @@ button:hover{
 button:active{
     background-color: rgb(0, 0, 0);
     color: rgb(129, 0, 0);
+    
 }
 
 #cardContainer{
-    position: relative;
+    position: absolute;
     height: 70%;
-    width: 95;
+    width: 95%;
     align-items: center;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(4,200px);
-    grid-template-rows: repeat(4,200px);
+    grid-template-rows: repeat(5,200px);
     grid-row-gap: 10px;
-
 }
 
 #game-info{
-    bottom: 250px;
-    font-size: 1.25vw;
+    position: absolute;
+    top:10%;
+    
+    grid-row: 5;
+
 }
 
 .card{
-    background-color: gray;
+    position: relative;
     height: 175px;
     width: 125px;
     border-radius: 2%;
     text-align: center;
+    cursor: pointer;
+    
 }
+
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.card-front{
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: inherit;
+}
+
+.card-back{
+    border: 1px solid #5cd2dd;
+    border-radius: inherit;
+}
+
+.liquid-divinium{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: width 100ms ease-in-out, height 100ms;
+    
+}
+/*Cards back and front*/
+.card.visible .card-back{
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front{
+    transform: rotateY(0deg);
+}
+
+.top-left{
+    top: 2px;
+    left: 2px;
+}
+
+.top-right{
+    top: 2px;
+    right: 2px;
+}
+
+.bottom-right{
+    bottom: 2px;
+    right: 2px;
+}
+
+.bottom-left{
+    bottom: 2px;
+    left: 2px;
+}
+
+img{
+    max-width: 100%;
+    max-width: 100%;
+    align-items: center;
+    object-fit: contain;
+}
+
+.logo{
+    height: 100%;
+    width: 90%;
+    align-self: flex-start;
+    transition: transform 100ms ease-in-out;
+    
+}
+/*Animation*/
+
+.wrapper{
+    animation: gradient 5s ease infinite;
+    background: linear-gradient(45deg,#5cd2dd,#16afbd,#144458,#0b232e);
+    background-size: 300% 300%;
+}
+
+#jugger{
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-color: blue;
+    z-index: 500;
+
+}
+
+@keyframes gradient{
+		0%{
+			background-position: 0%,50%;
+		}
+		50%{
+			background-position: 100% 50%;
+        }
+		100%{
+			background-position: 0% 50%;
+		}
+}
+
+/*Card back*/
+.card-back:hover .logo{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.card-back:hover .liquid-divinium{
+    width: 37px;
+    height: 37px;
+    box-shadow: inset 10px 10px 10px 10px  rgb(95, 0, 0);
+    border-radius: 100%;
+}
+
+/*Shake animation*/
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
