@@ -13,7 +13,7 @@ function App(){
             <div id="cardContainer">
 
                 
-                <div class="wrapper card visible">
+                <div class="wrapper card ">
                 
                     <div class="card-back card-face">
                         <img class="liquid-divinium top-left" src={liquidD}/>
@@ -25,7 +25,7 @@ function App(){
                     </div>                
                     
                     <div class="card-front card-face">
-                        <image id="jugger" src={jugger}></image>
+                        <img id="jugger" src={jugger}></img>
                     </div>
                 </div>
 
