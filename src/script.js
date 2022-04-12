@@ -75,7 +75,7 @@ class foundNotFound {
         card1.classList.add('matched');
         card2.classList.add('matched');
         if(this.matched.length === this.cardsArray.length){
-            alert('Congratulations! You Won')
+            alert('Congratulations! You Won');
         }
 
     }
